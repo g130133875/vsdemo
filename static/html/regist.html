@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+    <link rel="stylesheet" href="/css/regist.css">
+    <script>
+        document.querySelector('.file').addEventListener('change', function(e) {
+          //1.可以通过this拿到这个file的DOM元素
+          console.log(this)
+          //1.  e 函数事件参数对象中也有这个file的DOM元素对象。使用e.target也可以直接拿到
+          console.log(e.target)
+          //对开发人员屏蔽，所以直接 必须调用这个文件的DOM对象的files属性，返回一个数组
+          let files = e.target.files
+          console.log(files)
+          // console.log(files.item(0))
+          // console.log(files[0])
+          // 判断一手是否有文件
+          if (!files.length) return
+          // 上传文件 创建FormData
+          let formData = new FormData()
+          // upFile就是后台接收的key
+          formData.append('upFile', files[0], files[0].name)
+          // 将formdata发送到后台即可
+          axios.post('url', formData)
+        })
+
+
+        $(function(){
+            $("#submitBtn").click(function(){
+                // var data = $("#form1").serialize();
+                $.ajax({
+                    type: "post",
+                    url: "http://192.168.129.147:8080/management/userServlet",
+                    // url: "http://192.168.129.244:8080/signIn",
+                    data: {
+                        userName: $("#username").val(),
+                        password: $("#password").val(),
+                        gender: $("#gender").val(),
+                    },
+                    success: function(data){
+                        if(data){
+                            // console.log(data);
+                            var result = JSON.parse(data);
+                            if(data) {
+                                // alert(result.msg);
+                                window.location.href="index.html";
+                            }
+                        }
+                    }
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="header"></div>
+    <div class="nav">
+        <div class="title">
+            注册
+        </div>
+        <ul>
+            <li>
+                <a href="/index.html">Sign in</a>
+            </li>
+            <li>
+                Create Your ID
+            </li>
+        </ul>
+    </div>
+    <div class="mid">
+        <div class="bg_blur"></div>
+        <div class="content">
+            创建您的账号
+        </div>
+    </div>
+    <div class="info">
+        请老实填写如下信息
+    </div>
+    <div class="main">
+        <!-- <form action="#"> -->
+            <table>
+                <tr>
+                    <td>
+                        <input type="text" name="username" id="username" placeholder="请输入用户名" style="width: 460px; font-size: 20px;" class="form-box">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" name="password" id="password" placeholder="请输入密码" style="width: 100%; font-size: 20px;" class="form-box">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <select name="gender" id="gender" style="width: 100%; text-align: center; font-size: 20px;" class="form-box">
+                            <option value="male">男</option>
+                            <option value="female">女</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        上传头像&nbsp;&nbsp;&nbsp;
+                        <input type="file" name="file" class="file" >
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <input type="submit" value="提交" class="submit" id="submitBtn">
+                    </td>
+                </tr>
+            </table>
+        <!-- </form> -->
+    </div>
+</body>
+</html>

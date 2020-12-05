@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tip {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+
+    <!--事件三要素：事件源 事件类型 事件处理程序 -->
+    <!-- <button id="btn">Spring</button>
+    <div id="tip">this</div>
+    
+     <script>
+        var btn = document.getElementById('btn');
+        btn.onclick = function() {
+            var tip = document.getElementById('tip');
+            tip.style.backgroundColor = 'red';
+            tip.innerHTML = 'error';
+            setTimeout(()=>tip.remove(),2000);
+        }
+    </script> -->
+
+    <button>显示系统时间</button>
+    <div>时间区域</div>
+
+    <script>
+        // innerText不识别html标签，去掉空格和换行
+        // innerHTML 识别html标签,保留空格和换行
+        var btn = document.querySelector('button');
+        var div = document.querySelector('div');
+        btn.onclick=function() {
+            div.innerText = new Date();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         @font-face {
+  font-family: 'icomoon';
+  src:  url('/fonts/icomoon.eot?6pyg1w');
+  src:  url('/fonts/icomoon.eot?6pyg1w #iefix') format('embedded-opentype'),
+    url('/fonts/icomoon.ttf?6pyg1w') format('truetype'),
+    url('/fonts/icomoon.woff?6pyg1w') format('woff'),
+    url('/fonts/icomoon.svg?6pyg1w#icosmoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+         }
+
+         /* 伪元素选择器 */
+        /* div {
+            position: relative;
+            width: 200px;
+            height: 35px; 
+            border: 1px solid red;
+        }
+        div::after {
+            font-family: 'icomoon';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: red;
+            content: '\e986';
+        } */
+
+        /* 图片模糊处理 */
+        img {
+            filter: blur(5px);
+            width: 200px;
+            height: 200px;
+        }
+        img:hover {
+            filter: blur(0);
+        }
+
+        /* calc计算盒子宽度 */
+        .fater {
+            width: 300px;
+            height: 300px;
+            background-color: antiquewhite;
+        }
+        .son {
+            width: calc(100% - 50px);
+            height: calc(100% - 30px);
+            background-color: pink;
+        }
+
+        /* 过渡 */
+        .guodu {
+            width: 200px;
+            height: 100px;
+            background-color: rosybrown;
+            /* transition: width .5s,height .5s;; */
+            transition: all .5s;
+        }
+        .guodu:hover {
+            width: 300px;
+            height: 200px;
+            background-color: saddlebrown;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+
+    <img src="/images/honor/490951454030546.jpg" alt="" srcset="">
+
+    <div class="fater">
+        <div class="son"></div>
+    </div>
+
+    <div class="guodu"></div>
+</body>
+</html>

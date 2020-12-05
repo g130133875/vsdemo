@@ -1,0 +1,64 @@
+element.style   //行内样式操作
+element.className  //类名样式操作
+    注意：
+    1. JS里面的样式采取驼峰命名法 比如 fontSize、backgroundColor
+    2. JS修改style样式操作，产生的是行内样式，css权重比较高
+
+可以通过修改元素的className更改样式 适用于样式较多或者功能复杂的情况
+    this.className = '类名';
+
+
+节点操作：
+    1.  父节点
+          xx.parentNode  //离元素最近的父节点
+    2.  子节点
+          xx.childNodes  //类中所有子节点
+    3.  children 获取所有的子元素节点
+          ul.children;
+    4.  nextSibling  //下一个兄弟节点 包含元素节点或文本节点等
+          textElementSibling 下一个兄弟元素节点
+    5.  node.appendChild(child)  //将一个节点添加到指定父节点的子节点列表末尾
+    6.  node.insertBefore(child,指定元素)  //添加节点
+  
+    7.  node.removeChild(child);  //删除一个子节点，返回删除的节点
+    8.  node.cloneNode();  //复制节点,浅拷贝不拷贝内容
+        node.cloneNode(true);  //深拷贝，拷贝内容
+
+
+for(var k in obj) {
+    k 为数值
+    in obj[i] -->  k为属性名
+}
+
+
+三种动态创建元素区别:
+    1. document.write()
+        直接将内容写入页面的内容流,文档流执行完毕,会导致页面全部重绘
+    2. element.innerHTML
+        将内容写入某个DOM节点,不会导致页面全部重绘
+        innerHTML创建多个元素效率更高(采用数组形式拼接)
+    3. document.createElement()
+        创建多个元素效率低一些，但是结构更清晰
+
+
+注册事件（绑定事件）
+    eventTarget.addEventListener(type,listen[,useCapture])
+        1. 里面的事件类型是字符串 必定加引号 而且不带on
+        2. 同一个元素 同一个事件可以添加多个侦听器
+    attachEvent  ie9以前的版本支持
+    btn.attachEvent('onclick',function() { })
+
+
+删除事件
+    div.addEventListener('click',fn)
+        function fn() {
+            alert(22);
+            div.removeEventListener('click',fn);
+        }
+
+
+键盘事件：
+    onkeyup:某个键盘按键被松开时触发
+    onkeydown:某个键盘按键被按下时触发
+    onkeypress:某个键盘按键被按下时触发 //不是别ctrl、shift等功能键
+    keyCode属性获得相应键的ASCII码值

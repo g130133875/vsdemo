@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>倒计时效果</title>
+    <style>
+        div {
+            width: 200px;
+            margin: 300px auto;
+        }
+        span {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+            font-size: 30px;
+            color: white;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+    </div>
+    <script>
+        var div = document.querySelector('div');
+        var hour = div.children[0];
+        var min = div.children[1];
+        var second = div.children[2];
+        var lastTime = +new Date('2020-12-3 00:00:00');
+        countdown();
+        setInterval(countdown,1000);
+        function countdown(){
+            var currentTime = +new Date();  //获取当前时间总的毫秒数
+            var lst = (lastTime - currentTime)/1000;
+            var h = parseInt(lst/60/60);
+            h = h<10 ? '0'+h :h;
+            hour.innerHTML = h;
+
+            var m = parseInt(lst/60%60);
+            m = m<10 ? '0'+m :m;
+            min.innerHTML = m;
+
+            var s = parseInt(lst%60);
+            s = s<10? '0'+s:s;
+            second.innerHTML = s;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全选反选</title>
+    <style>
+        table {
+            width: 400px;
+            margin: 200px auto;
+            text-align: center;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        thead {
+            background-color: skyblue;
+        }
+        th,
+        td {
+            border: 1px solid #d0d0d0;
+            color: #404060;
+            padding: 10px;
+        }
+        tbody tr:hover {
+            cursor: pointer;
+            background-color:pink;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    <input type="checkbox" id="c-all">
+                </th>
+                <th>商品</th>
+                <th>价钱</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td>iPhone8</td>
+                <td>8000</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>iPad Pro</td>
+                <td>5000</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>iPad Air</td>
+                <td>2000</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>Apple Watch</td>
+                <td>2000</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        var call = document.getElementById('c-all');
+        var boxs = document.querySelector('tbody').getElementsByTagName('input');
+        var trs = document.querySelector('tbody').getElementsByTagName('tr');
+        call.onclick = function() {
+            for(var i = 0; i<boxs.length;i++) {
+                boxs[i].checked = call.checked;
+            }
+        }
+        for(var i = 0; i<boxs.length;i++) {
+            boxs[i].onclick = function() {
+                var flag = true;
+                for(var j = 0;j<boxs.length;j++) {
+                    if(boxs[j].checked == false)
+                        flag = false;
+                }
+                call.checked = flag;
+            }
+        }
+    </script>
+</body>
+</html>

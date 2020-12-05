@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tab栏切换</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .tab {
+            margin: 100px auto;
+            width: 900px;
+        }
+        li {
+            list-style-type: none;
+        }
+        .tab_list {
+            height: 50px;
+            border: 1px solid #999999;
+            text-align: center;
+        }
+        .tab_list li {
+            float: left;
+            width: 150px;
+            height: 50px;
+            line-height: 50px;
+            cursor: pointer;
+        }
+        .libg,
+        .current {
+            background-color: tomato;
+            color: white;
+        }
+        .item {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="tab">
+        <div class="tab_list">
+            <ul>
+                <li class="current">商品介绍</li>
+                <li>规格与包装</li>
+                <li>售后保障</li>
+                <li>商品评价(1W+)</li>
+                <li>手机社区</li>
+            </ul>
+        </div>
+        <div class="tab_con">
+            <div class="item" style="display: block;">
+                商品介绍模块内容
+            </div>
+            <div class="item">
+                规格与包装模块内容
+            </div>
+            <div class="item">
+                售后保障模块内容
+            </div>
+            <div class="item">
+                商品评价（50000）模块内容
+            </div>
+            <div class="item">
+                手机社区模块内容
+            </div>
+        </div>
+    </div>
+    <script>
+        var lis = document.querySelector('ul').getElementsByTagName('li');
+        var items = document.querySelectorAll('.item');
+        for(var i = 0;i<lis.length;i++) {
+            lis[i].setAttribute('index',i);
+            lis[i].onclick = function() {
+                for(var j = 0; j<lis.length; j++) {
+                    lis[j].className = '';
+                }
+                this.className = 'libg';
+
+                var index = this.getAttribute('index');
+
+                for(var j=0; j<lis.length; j++){
+                    items[j].style.display = 'none';
+                }
+                items[index].style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

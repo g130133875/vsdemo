@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>仿新浪注册页面</title>
+    <style>
+        .register {
+            width: 600px;
+            margin: 50px auto;
+        }
+        .message {
+            display: inline-block;
+            font-size: 14px;
+            color: #999999;
+            background: url(/images/mess.png) no-repeat left center;
+            padding-left: 17px;
+        }
+        .wrong {
+            color: red;
+            background-image: url(/images/wrong.png);
+        }
+        .right {
+            color: green;
+            background-image: url(/images/right.png);
+        }
+    </style>
+</head>
+<body>
+    <div class="register">
+        <input type="password" id="password">
+        <p class="message">请输入6位以上密码</p>
+    </div>
+
+    <script>
+        var text = document.getElementById('password');
+        var mess = document.querySelector('.message');
+        text.onblur = function() {
+            if(this.value.length < 6) {
+                mess.className = 'wrong message';
+                mess.innerHTML = '您输入的密码不足六位';
+            }
+            else {
+                mess.className = 'right message';
+                mess.innerHTML = '密码可用';
+            }
+        }
+    </script>
+</body>
+</html>

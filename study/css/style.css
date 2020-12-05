@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.w {
+    width: 1200px;
+    margin: auto;
+}
+.header {
+    height: 42px;
+    background-color: pink;
+    margin: 30px auto;
+}
+.logo {
+    float: left;
+    width: 200px;
+    height: 42px;
+    background-color: purple;
+}
+.bili {
+    width: 200px;
+    height: 42px;
+}
+.nav {
+    float: left;
+    margin-left: 60px;
+}
+
+li {
+    list-style: none;
+}
+.nav ul li a {
+    float: left;
+    display: block;
+    height: 42px;
+    padding: 0 10px;
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+    line-height: 42px;
+}
+.nav ul li a:hover {
+    border-bottom:1px solid blue;
+    color: blue;
+}
+.search {
+    float: left;
+    width:400px;
+    height: 42px;
+}
+.search input {
+    float: left;
+    width: 300px;
+    height: 40px;
+    border: 1px solid burlywood;
+    margin: 1px 0;
+    border-right: 0;
+    font-size: 14px;
+    padding-left: 15px;
+    color: gray;
+}
+.search button {
+    float: left;
+    width: 84px;
+    height: 42px;
+    background-color: green;
+}

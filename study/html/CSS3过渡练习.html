@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 400px;
+            height: 500px;
+            margin: 50px auto;
+            border: 1px solid red;
+        }
+        .img {
+            text-align: center;
+        }
+        .dec,
+        .price {
+            width: 400px;
+            height: 50px;
+        }
+        .dec p {
+            font-size: 14p;
+            color: gray;
+            /* text-align: center;
+            line-height: 50px; */
+        }
+
+        .price span:first-child {
+            font-size: 30px;
+            color: red;
+            margin-right: 10px;
+        }
+        .price span:last-child {
+            color: gray;
+            text-decoration: line-through;
+
+        }
+        
+        .bar {
+            float: left;
+            width: 150px;
+            height: 10px;
+            border: 1px solid red;
+            border-radius: 15px;
+            border-radius: 15px;
+            margin:5px 10px 0px 10px;
+        }
+        .bar-in {
+
+            width: 50%;
+            height: 100%;
+            background-color: red;
+            transition: width 1s;
+
+        }
+
+        .bar-in:hover {
+            width: 100%;
+        }
+        .span1 {
+            display: block;
+            float: left;
+        }
+        .submit {
+            text-align: center;
+        }
+        .submit input{
+            width: 100px;
+            height: 50px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="img">
+            <img src="/images/jd/phone.png" alt="">
+        </div>
+        <div class="dec">
+            <p>Apple苹果iPhone 金色 移动联通电信4G手机Apple苹果iPhone 金色 移动联通电信4G手机</p>
+        </div>
+        <div class="price">
+            <span>¥6088</span>
+            <span>¥6988</span>
+        </div>
+        <div class="nub">
+            <span class="span1">已售50%</span>
+            <div class="bar">
+                <div class="bar-in"></div>
+            </div>
+            <span>剩余29件</span>
+        </div>
+        <div class="submit">
+            <input type="submit" value="立即抢购">
+        </div>
+    </div>
+</body>
+</html>

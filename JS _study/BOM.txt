@@ -1,0 +1,85 @@
+window 对象常见事件
+    1. 窗口加载事件
+        window.onload = function() {}  //当文档内容完全加载完成后会触发该事件、如有多个onload以最后一个为准
+        或者
+        window.addEventListener('load',function(){});  //监听函数不受限制
+        window.addEventListener('DOMContentLoaded',function(){})  //DOM加载完毕即可，不包含图片CSS等
+
+    2. 调整窗口大小事件
+        // 调整窗口大小加载事件，当触发时就调用的处理函数
+        window.onresize = function() {}
+        window.addEventListener('resize',function(){});
+
+    3. 定时器
+        // setTimeout()方法用于设置一个定时器,该定时器在定时器到期后执行调用函数
+        window.setTimeout(调用函数,[延迟的毫秒数]);
+            // 清除定时器
+            window.clearTimeout(timeoutID)
+
+
+        //setInterval()定时器 重复调用一个函数
+        window.setInterval(回调函数,[间隔的毫秒数]);
+            //清除定时器
+            window.clearInterval(intervalID);
+
+
+JS执行机制
+    同步 :前一个任务结束后再执行后一个任务
+    异步 :同时处理多个线程
+
+location对象
+    window对象提供一个location属性用来获取或设置窗体的URL,并且解析URL
+    location对象属性:
+        location.href  获取或者设置整个URL
+        location.host  返回主机（域名）
+        location.port  返回端口号
+        location.pathname  返回路径
+        location.search  返回参数
+        location.hash  返回片段
+
+location常见对象方法：
+    location.assign():和href一样，可跳转页面
+    location.replace():替换当前页面，不记录历史，不可后退
+    location.reload():重新加载，相当于刷新按钮
+
+history对象：
+    back():后退功能
+    forward():前进功能
+    go(参数):前进后退功能
+
+offset系列:
+    //返回带有定位的父亲，否则返回body
+    element.offsetParent  返回作为该元素带有定位的父级元素,如果父级元素都没有定位则返回body
+    element.parentNode  返回最近一级父亲，不管有没定位
+    //得到偏移位置
+    element.offsetTop  返回元素相对带有定位父元素上方的偏移
+    element.offsetLeft  返回元素相对带有定位父元素左边框的偏移
+    //得到元素的宽度大小
+    element.offsetWidth  返回自身包括padding、边框、内容区的宽度，返回数值不带单位
+    element.offsetHight  返回自身包括padding、边框、内容区的高度，返回数值不带单位
+
+
+client系列:
+    element.clientTop  //返回上边框大小
+    element.clientLeft  //返回左边框大小
+    element.clientWidth  //返回不含边框的宽度,返回值不带单位
+    element.clientHeight  //返回不含边框的高度,返回值不带单位
+
+
+立即执行函数:
+    不需要调用自行执行
+    主要作用:避免命名冲突的问题
+    (function() {})() 或 (function(){}())
+
+
+scroll系列:
+    //如果使整个页面卷去:window.pageYOffset
+    element.scrollTop  //返回被卷去的上侧距离,返回数值不带单位
+    element.scrollLeft  //返回被卷曲的左侧距离
+    element.scrollWidth  //返回自身实际的宽度,不含边框
+    element.scrollHeight  //返回自身实际的高度,不含边框
+
+
+mouseover和mouseenter的区别:
+    mouseover经过自身和子盒子都会触发;
+    mouseenter只经过自身盒子触发

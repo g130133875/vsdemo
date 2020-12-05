@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简单版发布留言案例</title>
+    <style>
+        li {
+            background-color: pink;
+            width: 300px;
+            height: 50px;
+            margin-bottom: 10px;
+            line-height: 50px;
+        }
+        li a {
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <button>发布</button>
+    <ul>
+
+    </ul>
+    <script>
+        var btn = document.querySelector('button');
+        var text = document.querySelector('textarea');
+        var ul = document.querySelector('ul');
+    
+        btn.onclick = function() {
+           var val = text.value;
+           if(text.value === '') {
+               alert('请输入内容');
+           }else {
+            var li = document.createElement('li');
+            li.innerHTML = text.value + "<a href='javascript:;'>删除</a> ";
+            ul.insertBefore(li,ul.children[0]);
+            text.value = '';
+            }
+            var as = document.querySelectorAll('a');
+            
+            for(var i= 0; i<as.length;i++) {
+            as[i].onclick = function() {
+                ul.removeChild(this.parentNode);
+                }
+            }
+        }
+
+
+    </script>
+</body>
+</html>

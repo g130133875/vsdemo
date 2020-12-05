@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>更改背景图片</title>
+    <style>
+        body {
+            background: url("/images/Desktop\ Pictures/Chroma 1.jpg") no-repeat center top;
+        }
+        .google {
+            margin: 200px auto;
+        }
+        .google img {
+            width: 300px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="google">
+        <img src="/images/Desktop Pictures/Abstract Shapes 2.jpg" alt="">
+        <img src="/images/Desktop Pictures/Abstract Shapes.jpg" alt="">
+        <img src="/images/Desktop Pictures/Chroma 1.jpg" alt="">
+        <img src="/images/Desktop Pictures/Chroma 2.jpg" alt="">
+    </div>
+
+    <script>
+        var imgs = document.querySelector('.google').querySelectorAll('img');
+        for(var i =0; i<imgs.length;i++) {
+            imgs[i].onclick = function() {
+                console.log(this.src);
+                var bg = document.querySelector('body');
+                bg.style.background = 'url('+this.src+')';
+            }
+        }
+    </script>
+</body>
+</html>

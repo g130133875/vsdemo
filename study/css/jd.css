@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.w {
+    width: 1190px;
+    margin: auto;
+}
+.header {
+    height: 30px;
+    background-color: #dfe0e1;
+}
+.f {
+    font: 12px 'Microsoft yahei';
+    color: #999999;
+}
+
+li {
+    list-style: none;
+}
+.nav p {
+    float: left;
+    line-height: 30px;
+
+    margin-right: 450px;
+}
+.nav ul li a {
+    text-decoration: none;
+    color: #999999;
+    margin-right: 15px;
+    line-height: 30px;
+}
+.nav ul li a:hover {
+    color: tomato;
+}
+/* .regist {
+    color: red;
+} */
+.search {
+    height: 140px;
+    background-color: #F1F0F0;
+}
+.logo {
+    position: absolute;
+    width: 230px;
+    height: 139px;
+    background: url(/images/jd/logo2.png) center;
+    border-bottom: 1px solid #ededed;
+}
+.inputs {
+    width: 400px;
+    height: 36px;
+    margin-left: 345px;
+    background-color: tomato;
+}

@@ -1,0 +1,479 @@
+@charset "UTF-8";
+/*css 初始化 */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin:0; padding:0; }
+fieldset, img,input,button { border:none; padding:0;margin:0;outline-style:none; }   /*去掉input等聚焦时的蓝色边框 */
+ul, ol { list-style:none; }
+input { padding-top:0; padding-bottom:0; font-family: "SimSun","宋体";}
+select, input { vertical-align:middle;}
+select, input, textarea { font-size:12px; margin:0; }
+textarea { resize:none; } /*防止拖动*/
+img {border:0; vertical-align:middle; }  /*  去掉图片低测默认的3像素空白缝隙，或者用display：block也可以*/
+table { border-collapse:collapse; }
+body {
+    font:12px/150% Arial,Verdana,"\5b8b\4f53";
+    color:#666;
+    background:#fff
+}
+.clearfix:before,.clearfix:after {  /*清楚浮动*/
+    content:"";
+    display:table;
+}
+.clearfix:after{clear:both;}
+.clearfix{
+    *zoom:1;/*IE/7/6*/
+}
+a {color:#666; text-decoration:none; }
+a:hover{color:#C81623;}
+h1,h2,h3,h4,h5,h6 {text-decoration:none;font-weight:normal;font-size:100%;}  /*设置h标签的大小，设置跟父亲一样大的字体font-size:100%;*/
+s,i,em{font-style:normal;text-decoration:none;}
+.col-red{color: #C81623!important;}
+
+/* 声明字体 */
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?9hvu9i');
+    src:  url('../fonts/icomoon.eot?9hvu9i#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?9hvu9i') format('truetype'),
+      url('../fonts/icomoon.woff?9hvu9i') format('woff'),
+      url('../fonts/icomoon.svg?9hvu9i#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+/*公共类*/
+.w {  /*版心 提取 */
+    width: 1210px;
+    margin:0 auto;
+}
+.fl {
+    float:left
+}
+.fr {
+    float:right
+}
+.al {
+    text-align:left
+}
+.ac {
+    text-align:center
+}
+.ar {
+    text-align:right
+}
+.hide {
+    display:none
+}
+.font12{ font-size: 12px;}.font14{ font-size: 14px;}.font16{ font-size: 16px;}
+
+/*公共部分*/
+.style_red {
+    color: #C81623;
+}
+.arrow-icon::after {
+    content: '\ea50';
+    font-family: 'icomoon';
+    margin-left: 10px;
+    font-size: 10px;
+}
+
+/* 快捷导航模块 */
+.shortcut {
+    height: 36px;
+    background-color: #dfe0e1;
+    line-height: 36px;
+    color: #999;
+}
+.location::before {
+    content: '\e947';
+    font-family: 'icomoon';
+    color: red;
+    font-size: 14px;
+}
+.shortcut ul li {
+    float: left;
+}
+.shortcut .fr ul li:nth-child(even) {
+    width: 1px;
+    height: 11px;
+    background-color: #666;
+    margin: 12px 9px 0;
+} 
+
+/* 导航部分 */
+.header {
+    position: relative;
+    height: 140px;
+    background-color: #eef1ec;
+
+}
+.logo {
+    position: absolute;
+    width: 230px;
+    height: 140px;
+}
+.logo h1 a {
+    display: block;
+    width: 230px;
+    height: 140px;
+    background: url(../images/logo2.png) no-repeat;
+    /* font-size: 0;京东 */
+    text-indent: -2222px;
+    overflow: hidden;
+}
+.search {
+    position: absolute;
+    left: 350px;
+    top: 26px;
+    width: 400px;
+    height: 35px;
+    background-color: pink;
+}
+.search input {
+    float: left;
+    width: 350px;
+    height: 35px;
+    padding-left: 10px;
+}
+.search button {
+    float: left;
+    width: 50px;
+    height: 35px;
+    color: white;
+    background-color: red;
+}
+.shop {
+    position: absolute;
+    left: 765px;
+    top: 26px;
+    width: 190px;
+    height: 35px;
+    background-color: white;
+}
+.shop span {
+    display: block;
+    text-align: center;
+    line-height: 35px;
+    color: red;
+}
+.shop span::after {
+    content: '\e93a';
+    font-family: 'icomoon';
+    margin-left: 10px;
+}
+.ad {
+    position: absolute;
+    left: 350px;
+    top: 80px;
+    width: 400px;
+    height: 20px;
+}
+.ad ul li a {
+    color: #6d6f6b79;
+    margin-right: 10px;
+}
+.kinds {
+    position: absolute;
+    left: 260px;
+    top: 100px;
+    width: 425px;
+    height: 42px;
+}
+.kinds ul li a {
+    font-size: 14px;
+    text-align: center;
+    line-height: 42px;
+    margin-right: 20px;
+}
+.bg {
+    height: 489px;
+    width: 1660px;
+    margin: 0 auto;
+    background: url(/images/bg.png) no-repeat;
+    background-position: -50px 0;
+}
+.main {
+    height: 100%;
+
+}
+.menu {
+    float: left;
+    width: 240px;
+    height: 489px;
+    background-color: #ffffff;
+    border: 1px solid white;
+}
+.menu ul li {
+    width: 170px;
+    height: 36px;
+    line-height: 36px;
+    padding-left: 20px;
+}
+.menu ul li:hover {
+    background: #d4d4d4;
+}
+.phone {
+    position: relative;
+    float: left;
+    width: 711px;
+    height: 380px;
+    background: url(/images/phone.jpeg) no-repeat;
+    background-size: 100%,100%;
+    margin-right: 9px;
+}
+.lbox {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -22px;
+    width: 24px;
+    height: 44px;
+    background-color: rgba(0, 0, 0, .3);
+}
+.icon-left::before {
+    content: '\ea52';
+    font-family: 'icomoon';
+    font-size: 30px;
+    text-align: center;
+    line-height: 44px;
+    color: white;
+}
+.icon-right::after {
+    content: '\ea51';
+    font-family: 'icomoon';
+    font-size: 30px;
+    text-align: center;
+    line-height: 44px;
+    color: white;
+}
+.rbox {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -22px;
+    width: 24px;
+    height: 44px;
+    background-color: rgba(0, 0, 0, .3);
+}
+.service {
+    position: relative;
+    float: left;
+    width: 248px;
+    height: 479px;
+    background-color: #ffff;
+}
+.welcome {
+    margin: 0 24px;
+    width: 200px;
+    height: 150px;
+    background-color: #fff;
+    border-bottom: 1px solid #c3c3c3;
+}
+.nologin {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    box-shadow: 3px 6px 25px #c3c3c3;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.nologin-name {
+    text-align: center;
+    margin-top: 10px;
+    color: #888;
+}
+.nologin-info {
+    text-align: center;
+}
+.user_profit {
+    text-align: center;
+}
+.user_profit a {
+    display: inline-block;
+    width: 70px;
+    height: 25px;
+    border-radius: 13px;
+    line-height: 25px;
+    margin-top: 10px;
+    box-shadow: 6px 8px 20px rgba(45,45,45,.15);;
+}
+.user_profit a:hover {
+    background-color: tomato;
+}
+.new_user {
+    color: #e43f3b;
+}
+.new_plus {
+    color: gold;
+    background-color: black;
+}
+.service-box {
+    width: 200px;
+    height: 188px;
+    margin: 0 auto;
+    padding-top: 22px;
+    border-bottom: 1px solid #c3c3c3;
+}
+.service-box p {
+    display: inline-block;
+    font-weight: 700;
+}
+.service-box>a {
+    float: right;
+}
+.service-list {
+    width: 200px;
+    height: 56px;
+    margin: 15px 10px 30px 10px;
+}
+.service-list li a {
+    display: inline-block;
+    margin: 10px;
+    color: gray;
+}
+.icon-list {
+    width: 167px;
+    height: 70px;
+    margin: 0 auto;
+}
+.icon-list li a {
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    background-color: pink;
+}
+.notice-box {
+    width: 200px;
+    height: 90px;
+    padding-top: 18px;
+}
+.notice-box a {
+    float: right;
+}
+.notice li {
+    float: left;
+}
+.notice li a {
+    color: #c3c3c3;
+}
+.notice li a:hover {
+    color: red;
+}
+.product {
+    position: relative;
+    height: 266px;
+}
+.goods-seckill {
+    position: relative;
+    height: 100%;
+    width: 200px;
+    background-color: #f02b2b;
+    text-align: center;
+}
+.seckill-title {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    margin-left: -64px;
+    color: #ffffff;
+    font-size: 32px;
+}
+.seckill-title-en {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    margin-left: -64px;
+    font-size: 19px;
+    color: #ffff;
+} 
+.seckill-icon::before {
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    margin-left: -30px;
+    content: '\e947';
+    font-family: 'icomoon';
+    font-size: 60px;
+    color: white;
+}
+.time {
+    position: absolute;
+    top: 172px;
+    left: 50%;
+    margin-left: -54px;
+    font-size: 14px;
+    color: white;
+}
+.ling {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    margin-left: -60px;
+    font-size: 18px;
+    color: white;
+    font-weight: 400;
+}
+.ling span {
+    display: inline-block;
+    line-height: 35px;
+    width: 35px;
+    height: 35px;
+    background-color: black;
+    text-decoration: line-through red;
+}
+.goods-price {
+    position: absolute;
+    height: 100%;
+    color: #666666;
+    margin-right: 19px;
+}
+.img {
+    margin: 15px auto;
+}
+.info {
+    height: 36px;
+    font-size: 14px;
+    overflow:hidden; 
+    text-overflow:ellipsis;
+    display:-webkit-box; 
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2; 
+    margin: 0 auto;
+    /* white-space: normal; */
+}
+.prices {
+    width: 160px;
+    height: 25px;
+    margin: 5px auto;
+    border: 1px solid red;
+    line-height: 25px;
+}
+.price-left {
+    float: left;
+    width: 80px;
+    height: 100%;
+    background-color: red;
+    color: white;
+}
+.price-right {
+    float: left;
+    width: 80px;
+    height: 100%;
+    background-color: white;
+    color: #c3c3c3;
+    text-decoration: line-through;
+}
+.one {
+    left: 220px;
+}
+.two {
+    left: 420px;
+}
+.three {
+    left: 620px;
+}
+.four {
+    left: 820px;
+}
+.five {
+    left: 1020px;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>输入框隐藏</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            width: 500px;
+            margin: 100px auto;
+        }
+        .box1 {
+            color: #999;
+            border: 1px solid #333;
+        }
+        .after {
+            color: #333;
+            border-color: pink;
+            outline-style: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <input type="text"  id="username" value="用户名" autocomplete="off" class="box1">
+        <input type="text" id="password" value="密码" autocomplete="off" class="box1">
+    </div>
+    <script>
+        var usr = document.getElementById('username');
+        var pwd = document.getElementById('password');
+        var str = '用户名';
+        usr.onfocus = function() {
+            if(this.value === str){
+                this.value = '';
+            }
+            this.className = 'after';
+        }
+        usr.onblur = function() {
+            if(this.value === ''){
+                this.className = 'box1';
+                this.value = str;
+            }
+        }
+    </script>
+</body>
+</html>

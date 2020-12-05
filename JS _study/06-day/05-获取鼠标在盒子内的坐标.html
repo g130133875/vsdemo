@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>获取鼠标在盒子内的坐标</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 500px;
+            margin: 300px auto;
+            background-color: pink;
+            text-align: center;
+            line-height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+    <script>
+        var box = document.querySelector('.box');
+        box.addEventListener('mousemove',function(e){
+            var x = e.pageX - this.offsetLeft;
+            var y = e.pageY - this.offsetTop;
+            this.innerHTML = `鼠标在盒子内坐标为(${x},${y})`;
+        })
+    </script>
+</body>
+</html>
