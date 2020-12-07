@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>缓动动画添加回调函数</title>
+    <style>
+        div {
+            position: absolute;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <button class="star">回到原点</button>
+    <button class="f">点击移动到五百</button>
+    <button class="e">点击移动到八百</button>
+    <div></div>
+    <script>
+        var btnf = document.querySelector('.f');
+        var btne = document.querySelector('.e');
+        var box = document.querySelector('div');
+        var star = document.querySelector('.star');
+        function animation(obj,target,callback){
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function(){
+                if(obj.offsetLeft == target){
+                    clearInterval(obj.timer);
+                    if(callback){
+                        callback();
+                    }
+                }
+                var step = (target-obj.offsetLeft)/10;
+                step = step>0? Math.ceil(step) :Math.floor(step);
+                obj.style.left = `${obj.offsetLeft + step}px`;
+            },30);
+        }
+        btnf.addEventListener('click',function(){
+            animation(box,500,function(){
+                box.style.backgroundColor = 'gray';
+            });
+        });
+        btne.addEventListener('click',function(){
+            animation(box,800,function(){
+                box.style.backgroundColor = 'red';
+            });
+        });
+        star.addEventListener('click',function() {
+            animation(box,0,function(){
+                box.style.backgroundColor = 'pink';
+            });
+        });
+    </script>
+</body>
+</html>
