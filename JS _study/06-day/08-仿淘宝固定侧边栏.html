@@ -36,7 +36,10 @@
         }
         .goBack {
             display: none;
-            color: red;
+        }
+        .goBack a {
+            text-decoration: none;
+            color: white;
         }
     </style>
 </head>
@@ -73,7 +76,7 @@
             }
         });
         href.addEventListener('click',function() {
-            window.style.top = 0;
+            window.scroll(0,0);
         })
 
     </script>

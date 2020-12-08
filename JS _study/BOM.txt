@@ -83,3 +83,9 @@ scroll系列:
 mouseover和mouseenter的区别:
     mouseover经过自身和子盒子都会触发;
     mouseenter只经过自身盒子触发
+
+
+touch触摸事件:
+    touchstart:手指触摸DOM元素事件
+    touchmove:手指在DOM元素身上移动事件
+    touchend:手指离开DOM元素事件
