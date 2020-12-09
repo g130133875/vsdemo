@@ -89,3 +89,11 @@ touch触摸事件:
     touchstart:手指触摸DOM元素事件
     touchmove:手指在DOM元素身上移动事件
     touchend:手指离开DOM元素事件
+
+
+classList使用:
+    classList: 返回元素类名
+    classList.add('') : 在以前类名后添加新的类名
+    classList.remove('') : 删除类名
+    classList.toggle('') : 切换类（有此类则去掉，无则添加）
+    
