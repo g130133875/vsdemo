@@ -96,4 +96,21 @@ classList使用:
     classList.add('') : 在以前类名后添加新的类名
     classList.remove('') : 删除类名
     classList.toggle('') : 切换类（有此类则去掉，无则添加）
-    
+
+
+插件:
+    fastclick
+    swiper
+    TouchSlide
+    zy.media
+
+
+本地存储:
+    数据存储在浏览器中，生命周期为关闭浏览器窗口
+    sessionStorage
+        sessionStorage.setItem('key',value);  //存储数据
+        sessionStorage.getItem(key);  //获取数据
+        sessionStorage.removeItem(key);  //删除数据
+        sessionStorage.clear();  //清除所有
+    localStorage
+        与前面方法类似，生命周期永久生效
