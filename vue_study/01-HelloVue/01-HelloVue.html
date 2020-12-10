@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for='i in songs'>{{i}}</li>
+        </ul>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                name: 'Vue',
+                songs: ['轨迹','火红的撒日朗','黑色毛衣','八里香','闻香识女子']
+            }
+        })
+    </script>
+</body>
+</html>
