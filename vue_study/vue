@@ -1,0 +1,11 @@
+vue基本指令:
+  v-for
+  v-once: 只显示一次
+  v-html: 解析html
+  v-text
+  v-pre: 不解析{{}}
+  v-cloak 
+
+v-bind:
+  动态绑定属性
+    eg: <img （v-bind）:src=" ">

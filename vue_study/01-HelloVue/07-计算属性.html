@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>计算属性</title>
+  <script src="../vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    总价格:{{totalPrice}}
+  </div>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        books: [
+        {id:101,name:'火影忍者',price: 99},
+        {id:102,name:'海贼王',price: 919},
+        {id:103,name:'进击的巨人',price: 199},
+        {id:104,name:'鬼灭之刃',price: 992}
+        ]
+      },
+      computed: {
+      totalPrice: function(){
+        let result = 0;
+        for(let i=0; i<this.books.length; i++){
+          result += this.books[i].price;
+        }
+        return result;
+        
+        // for (let key in this.books) {
+        //   this.books[key];
+        // }
+        // for (let book of this.books) {
+          
+        // }
+      }
+    }
+    })
+  </script>
+</body>
+</html>

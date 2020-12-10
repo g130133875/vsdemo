@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue基本指令</title>
+    <script src="../vue.js"></script>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h2 v-once>{{message}}</h2>
+        <h2 v-html='ht'></h2>
+        <h2 v-text='message'></h2>
+        <h2 v-pre>{{url}}</h2>
+    </div>
+    <hr>
+    <div id="cloak">
+        <h2 v-cloak>{{message}}</h2>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'HelloVue',
+                url: 'http://www.google.com',
+                ht: '<a href="http://www.google.com">谷歌</a>'
+            }
+        });
+        
+        setTimeout(function(){
+            var cloak = new Vue({
+            el: '#cloak',
+            data: {
+                message: '两秒后出现'      
+            }
+        })
+        },2000)
+    </script>
+</body>
+</html>

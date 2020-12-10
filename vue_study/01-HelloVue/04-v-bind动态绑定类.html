@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>v-bind动态绑定类</title>
+  <script src="../vue.js"></script>
+  <style>
+    .active {
+      color: red;
+    }
+    .line {
+      color: salmon;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h2 v-bind:class="{active:isActive,line:isLine}">{{message}}</h2>
+    <button @click='btnClick'>change</button>
+  </div>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: 'HelloVue',
+        isActive: true,
+        isLine: true
+      },
+      methods: {
+        btnClick: function(){
+          this.isLine = !this.isLine;
+        }
+      }
+    })
+  </script>
+</body>
+</html>
