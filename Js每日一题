@@ -1,0 +1,8 @@
+12.13:
+  题目:判断存在重复元素
+  最优解:哈希表
+      Set 对象允许存储任何类型的唯一值，无论是原始值或者是对象引用。
+      set.add  在尾部插入一个元素
+      set.clear  移除所有元素
+      set.delete(value)  移除set中与value相等的元素
+      set.has(value)  返回一个boolean表示是否为value

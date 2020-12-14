@@ -9,3 +9,43 @@ vue基本指令:
 v-bind:
   动态绑定属性
     eg: <img （v-bind）:src=" ">
+
+var let const的区别:
+  var: 作用域为函数
+  let: 作用域为块
+  const: 修饰后不可修改且必须赋值(对象内部的属性可修改)
+
+
+vue常用指令
+  v-on的参数问题:
+  事件调用的方法没有参数可省略小括号
+  如果有参数没有写则函数的形参为undefined
+  在调用方法，手动获取到浏览器参数的event对象: $event
+
+  v-on修饰符:
+    .stop 停止冒泡
+    .prevent 阻止默认行为 
+    .{keyCode | keyAlias} 只当事件是从特定建触发时才触发回调
+    .native 监听组件根元素的原生事件
+    .once 只触发一次回调
+
+  v-if、v-else-if、v-else
+    v-if后面的条件为false时，对应的元素以及子元素不会渲染
+  v-show:
+    v-if: 条件为false时，包含v-if指令的元素，DOM中不会存在对应的元素
+    v-show: display:none，适用于切换频率高的情况
+
+
+  组件的key属性:
+    使用v-for时给对应组件添加:key属性
+    作用：高效的更新虚拟DOM
+
+
+  可以做到响应式的数组方法:
+    push()
+    pop()
+    shift(): 删除第一个元素
+    unshift(): 在前面添加元素
+    splice(位置，删除元素个数，插入的元素): 删除/插入/替换元素
+    sort()
+    reverse(): 反转
