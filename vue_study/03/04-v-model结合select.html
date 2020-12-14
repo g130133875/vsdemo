@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>v-model结合select</title>
+  <script src="../vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <select name="" id="" v-model="fruit">
+      <option value="苹果">苹果</option>
+      <option value="香蕉">香蕉</option>
+      <option value="柚子">柚子</option>
+      <option value="橘子">橘子</option>
+    </select>
+    <h3>喜欢吃的是{{fruit}}</h3>
+
+    <select name="" id="" v-model='fruits' multiple>
+      <option value="苹果">苹果</option>
+      <option value="香蕉">香蕉</option>
+      <option value="柚子">柚子</option>
+      <option value="橘子">橘子</option>
+    </select>
+    <h3>喜欢的是{{fruits}}</h3>
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          fruit: "橘子",
+          fruits: []
+        }
+      })
+    </script>
+  </div>
+</body>
+</html>

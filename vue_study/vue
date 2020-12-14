@@ -49,3 +49,29 @@ vue常用指令
     splice(位置，删除元素个数，插入的元素): 删除/插入/替换元素
     sort()
     reverse(): 反转
+
+高阶函数filter/map/reduce
+  filter:
+    回调函数有一个要求:返回一个boolean的值
+    true: 函数内部将回调的n加入新数组
+    false: 函数内部过滤掉n
+  map:
+    eg:
+      let newNums = nums.map(function (n){
+        return n*2;
+      }) 
+  reduce: 对数组中所有的内容进行汇总
+    eg:
+      let total = nums.reduce(function (preValue, n) {
+        return preValue+n;
+      },0)
+
+v-model
+  实现双向绑定
+  修饰符: lazy, number, trim
+    lazy: 失去焦点或者回车后更新
+    number: 输入的内容自动转换成数字类型
+    trim: 可以过滤左右两边空格
+
+组件化开发
+  
