@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>组件模版的分离写法</title>
+</head>
+<body>
+
+
+   <!-- 原生组件
+    <div id="app">
+     <my-cpn></my-cpn>
+   </div>
+  <script src="../vue.js"></script>
+  <script>
+    const myCpn = Vue.extend({
+      template: `
+        <div>
+          <h2>标题</h2>
+          <p>内容</p>
+        </div>
+      `
+    })
+    Vue.component('my-cpn',myCpn);
+    const app = new Vue({
+      el: '#app',
+    })
+  </script> -->
+
+<div id="app">
+  <my-cpn></my-cpn>
+</div>
+
+  <template id="myCpn">
+    <div>
+      <h2>组件模版分离</h2>
+      <p>fenlisuccess</p>
+    </div>
+  </template>
+  <script src="../vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      components: {
+        'my-cpn': {
+          template: '#myCpn'
+        }
+      }
+    })
+  </script>
+
+</body>
+</html>
