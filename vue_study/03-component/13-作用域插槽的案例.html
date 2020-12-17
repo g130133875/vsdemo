@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作用域插槽的案例</title>
+</head>
+<body>
+    <div id="app">
+        <cpn></cpn>
+        <cpn>
+            <template slot-scope='slot'>
+                <!-- <span v-for='i in slot.data'>{{i}}-</span> -->
+                <span>{{slot.data.join(' - ')}}</span>
+            </template>
+        </cpn>
+    </div>
+    
+    <template id="cpn">
+        <div>
+            <slot :data='movies'>
+                <ul>
+                    <li v-for='item in movies'>{{item}}</li>
+                </ul>
+            </slot>
+        </div>
+    </template>
+    <script src="../vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            components: {
+                cpn: {
+                    template: '#cpn',
+                    data() {
+                        return{
+                            movies: ['火影忍者','海贼王','我的世界','东京食尸鬼','洛克王国']
+                        }
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>
