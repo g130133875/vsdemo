@@ -84,4 +84,20 @@ v-model
   具名插槽: 给slot命名方便修改属性
 
 模块化开发
-  
+  模块化核心：导入和导出
+    CommonJS的导出：
+      module.exports = {
+        flag: true,
+        test(a, b) {
+          return a+b
+        }
+      }
+    CommonJS的导入:
+      let {flag, test} = require('moduleA');
+
+Webpack
+  JavaScript应用的静态模板打包工具:前端模块化打包工具
+  全局安装:
+    npm install webpack@3.6.0 -g
+  局部安装:
+    npm install webpack@3.6.0 --save-dev
