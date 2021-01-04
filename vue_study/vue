@@ -101,3 +101,47 @@ Webpack
     npm install webpack@3.6.0 -g
   局部安装:
     npm install webpack@3.6.0 --save-dev
+
+Vue CLI
+  脚手架：自动进行webpack配置
+  安装：
+    脚手架3：npm install @vue/cli(@指定版本)
+            vue create my-project
+    脚手架2：npm install @vue/cli-init -g
+            vue init webpack my-project 
+  卸载：
+    npm uninstall -g @vue/cli
+
+箭头函数：
+  const c = (参数列表) => { }
+  //箭头函数中的this引用的就是最近作用域中的this
+  const obj = {
+    aaa() {
+      setTimeout(function () {
+        console.log(this);  //window
+      })
+
+      setTimeout(() => {
+        console.log(this);  //obj
+      })
+    }
+  }
+
+router
+  安装：
+    步骤一： 安装vue-router
+      npm install vue-router --save
+    步骤二： 在模块化中使用
+      1. 导入路由对象，并且调用Vue.use(VueRouter)
+      2. 创建路由实例，并且传入路由映射配置
+      3. 在Vue实例中挂载创建的路由实例
+  使用：
+    1. 创建路由组件
+    2. 配置路由映射：组件和路径映射关系
+    3. 使用路由：通过<router-link>和<router-view>
+
+router-link:
+  tag: 指定渲染组件类型
+  replace: 不会留下history记录，所以指定replace的情况下后退键不能返回到上一个页面中
+  active-class： 对应的路由匹配成功时，自动给当前元素设置一个router-link-active的类
+  
