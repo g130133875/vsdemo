@@ -1,7 +1,9 @@
 <template>
     <div>
-        <h2>关于</h2>
-        <p>关于</p>
+        <h2>内容</h2>
+        <h2>{{$route.query.name}}</h2>
+        <h2>{{$route.query.age}}</h2>
+        <h2>{{$route.query.height}}</h2>
     </div>
 </template>
 

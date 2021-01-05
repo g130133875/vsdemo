@@ -15,7 +15,6 @@ var let const的区别:
   let: 作用域为块
   const: 修饰后不可修改且必须赋值(对象内部的属性可修改)
 
-
 vue常用指令
   v-on的参数问题:
   事件调用的方法没有参数可省略小括号
@@ -140,8 +139,19 @@ router
     2. 配置路由映射：组件和路径映射关系
     3. 使用路由：通过<router-link>和<router-view>
 
-router-link:
+router-link: 可通过按钮方法(this.$router.push('/路径'))来实现
   tag: 指定渲染组件类型
   replace: 不会留下history记录，所以指定replace的情况下后退键不能返回到上一个页面中
   active-class： 对应的路由匹配成功时，自动给当前元素设置一个router-link-active的类
-  
+  动态路由：$route.params.userId
+
+传递参数的方式：
+  params的类型：
+    配置路由格式：/router/:id
+    传递的方式：在path后面跟上对应的值
+    传递后形成的路径：/router/id
+  query的类型：
+    配置路由格式：/router，普通配置
+    传递的方式：对象中使用query的key作为传递方式
+    传递后形成的路径：/router?id=xx
+
