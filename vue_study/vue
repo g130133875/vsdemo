@@ -155,3 +155,25 @@ router-link: 可通过按钮方法(this.$router.push('/路径'))来实现
     传递的方式：对象中使用query的key作为传递方式
     传递后形成的路径：/router?id=xx
 
+$route和$router的区别：
+  $router为VueRouter实例，想要导航到不同URL，则使用$router.push方法
+  $route为当前router跳转对象里面可以获取name、path、query、params等
+
+导航守卫：
+  vue-router提供的导航守卫主要用来监听路由的进入和离开
+  vue-router提供了beforeEach和afterEach的钩子函数，它们会在路由即将改变前和改变后触发
+导航守卫的使用：
+  利用beforeEach来完成标题的修改：
+    1.在钩子中定义一些标题，可利用meta来定义
+    2.利用导航守卫修改标题
+导航钩子：前置钩子beforeEach，后置钩子afterEach（不需要调用next）
+  router.beforeEach(to,from,next) => {
+  document.title = to.matched[0].meta.title
+  console.log(to)
+  next()}
+  to：即将要进入的目标的路由对象
+  from：当前导航即将要离开的路由对象
+  next：调用该方法后，才能进入下一个钩子
+
+keep-alive
+  可缓存所包含的视图组件
