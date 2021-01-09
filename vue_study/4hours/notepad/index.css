@@ -1,0 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.todoapp {
+    width: 800px;
+    height: 1000px;
+    margin: 200px auto;
+    background-color: rebeccapurple;
+}
