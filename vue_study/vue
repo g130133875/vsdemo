@@ -177,3 +177,11 @@ $route和$router的区别：
 
 keep-alive
   可缓存所包含的视图组件
+
+网络应用axios
+  网易音乐接口：https://autumnfish.cn/
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  语法：
+    axios.get(地址？key=value&key2=values).then(function(response){},function(err){})
+    axios.post(地址,{key:value,key2=value2}).then(function(response){},function(err){})
