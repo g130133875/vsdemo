@@ -141,7 +141,7 @@ router
 
 router-link: 可通过按钮方法(this.$router.push('/路径'))来实现
   tag: 指定渲染组件类型
-  replace: 不会留下history记录，所以指定replace的情况下后退键不能返回到上一个页面中
+  replace: 不会留下history记录，所以指定replace的情况下后退键不能返回到上一个页面中（push可返回）
   active-class： 对应的路由匹配成功时，自动给当前元素设置一个router-link-active的类
   动态路由：$route.params.userId
 
@@ -185,3 +185,4 @@ keep-alive
   语法：
     axios.get(地址？key=value&key2=values).then(function(response){},function(err){})
     axios.post(地址,{key:value,key2=value2}).then(function(response){},function(err){})
+
