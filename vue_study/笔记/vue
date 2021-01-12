@@ -217,4 +217,5 @@ Promise：异步编程的解决方案
       }
     })
 
-Vuex:为Vue.js应用程序开发的状态管理模式
+Vuex:为Vue.js应用程序开发的状态管理模式 
+  npm install vuex --save
