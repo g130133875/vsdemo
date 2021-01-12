@@ -138,6 +138,8 @@ router
     1. 创建路由组件
     2. 配置路由映射：组件和路径映射关系
     3. 使用路由：通过<router-link>和<router-view>
+  hash模式和history模式的区别：
+    history不带#
 
 router-link: 可通过按钮方法(this.$router.push('/路径'))来实现
   tag: 指定渲染组件类型
@@ -186,3 +188,33 @@ keep-alive
     axios.get(地址？key=value&key2=values).then(function(response){},function(err){})
     axios.post(地址,{key:value,key2=value2}).then(function(response){},function(err){})
 
+路径别名：
+  @ = src
+  导入的别名可直接使用，src=""中的别名前面加~
+
+Promise：异步编程的解决方案
+  resolve():调用成功
+  reject():调用失败，直接转到catch()
+  也可将成功失败的函数都写在then()中
+  例子：
+    new Promise((resolve, reject) => {
+      //第一次网络请求
+      setTimeout(() => {
+        resolve()
+      },1000)
+    }).then(()=>{
+      console.log('Hello');
+
+      return new Promise((resolve, reject) => {
+        //第二次网络请求
+        setTimeout(() => {
+          reject('err message);
+        },1000)
+      }).then(() => {
+        console.log('world');
+      }).catch(err) => {
+        console.log(err);
+      }
+    })
+
+Vuex:为Vue.js应用程序开发的状态管理模式
