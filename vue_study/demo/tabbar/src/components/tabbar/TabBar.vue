@@ -10,7 +10,6 @@ export default {
 }
 </script>
 <style scoped>
-  @import '../../assets/css/normalize.css';
   #tab-bar {
     display: flex;
     background-color: #f6f6f6;

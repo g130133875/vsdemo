@@ -15,7 +15,7 @@
         <img slot="item-icon-active" src="@/assets/img/tabbar/shopcart_active.svg" alt="">
         <div slot="item-text">购物车</div>
       </tab-bar-item>
-      <tab-bar-item path="/profile" activeColor="blue">
+      <tab-bar-item path="/profile">
         <img slot="item-icon" src="@/assets/img/tabbar/profile.svg" alt="">
         <img slot="item-icon-active" src="@/assets/img/tabbar/profile_active.svg" alt="">
         <div slot="item-text">我的</div>
@@ -25,7 +25,7 @@
 
 <script>
 import TabBar from '@/components/tabbar/TabBar'
-import TabBarItem from '@/components/tabbar/TabBarItem.vue'
+import TabBarItem from '@/components/tabbar/TabBarItem'
 export default {
   name: 'MainTabbar',
   components: {
