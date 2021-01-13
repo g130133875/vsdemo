@@ -187,6 +187,8 @@ keep-alive
   语法：
     axios.get(地址？key=value&key2=values).then(function(response){},function(err){})
     axios.post(地址,{key:value,key2=value2}).then(function(response){},function(err){})
+  axios.all 可以放入多个请求数组， axios.all([])返回的结果是一个数组，使用axios.spread 可将数组[res1, res2]展开为res1，res2
+    例子： axios.all([axios.get('接口1'), axios.get('接口2', {params: {xxx}}]).then(axios.spread((res1, res2) => {}))
 
 路径别名：
   @ = src
@@ -219,3 +221,18 @@ Promise：异步编程的解决方案
 
 Vuex:为Vue.js应用程序开发的状态管理模式 
   npm install vuex --save
+
+store属性
+  state：存放共享的数据
+    修改state的唯一途径是mutation
+  mutations：存放同步操作的mutation方法
+    组件使用时使用 this.$store.commit('mutation方法'， 参数)
+    自动传入state：function(state)
+      添加state的响应式属性：Vue.set(state.info, 'address', '洛杉矶')
+      删除：Vue.delete(state.info, 'age)
+  actions：
+    存放异步操作的方法，想修改state则通过提交到mutation
+    组件使用时： this.$store.dispatch('action方法', 参数)
+  getters：放置getters方法，自动传入state
+  modules：将store分割成模块
+

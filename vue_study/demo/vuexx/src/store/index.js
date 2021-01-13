@@ -13,7 +13,8 @@ const store = new Vuex.Store({
       {id: 100, name: 'aa', age: 18},
       {id: 101, name: 'aaa', age: 19},
       {id: 102, name: 'aaaa', age: 20},
-    ]
+    ],
+    message: '做饭了吗'
   },
   mutations: {
     //mutation方法，只能是同步操作
@@ -22,13 +23,25 @@ const store = new Vuex.Store({
     },
     decrement(state) {
       state.counter--
+    },
+    cook(state) {
+      state.message = '做了'
     }
   },
   actions: {
-
+    cook(context, mes) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          context.commit('cook');
+          console.log(mes);
+          resolve('ok');
+          reject('err')
+        },1000)
+      }) 
+    }
   },
   getters: {
-    // 防止getters方法
+    // 放置getters方法
     morethan18(state) {
       return state.students.filter(s => s.age >18)
     },
