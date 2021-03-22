@@ -7,7 +7,7 @@ vue基本指令:
   v-cloak 
 
 v-bind:
-  动态绑定属性
+  动态绑定属性、数据、表达式
     eg: <img （v-bind）:src=" ">
 
 var let const的区别:
@@ -66,7 +66,7 @@ vue常用指令
       },0)
 
 v-model
-  实现双向绑定
+  实现双向绑定（在表单中使用，表单元素外不起作用）
   修饰符: lazy, number, trim
     lazy: 失去焦点或者回车后更新
     number: 输入的内容自动转换成数字类型
