@@ -8,7 +8,7 @@
       <!-- 表单区域 -->
       <el-form class="login_form">
         <!-- 用户名 -->
-        <el-form-item>
+        <el-form-item >
           <el-input></el-input>
         </el-form-item>
         <!-- 密码 -->
@@ -16,7 +16,7 @@
           <el-input></el-input>
         </el-form-item>
         <!-- 按钮 -->
-        <el-row>
+        <el-row class="login_btn">
           <el-button type="primary" round>登陆</el-button>
           <el-button type="warning" round>重置</el-button>
         </el-row>
@@ -55,7 +55,7 @@ export default {
     position: relative;
     width: 40em;
     height: 40em;
-    background-color: blanchedalmond;
+    /* background-color: blanchedalmond; */
     margin: 50% 50%;
     transform: translate(-50%,-50%);
   }
@@ -73,8 +73,13 @@ export default {
     height: 100%;
     border-radius: 50%;
   }
-  .login_form el-form-item el-input {
-    width: 30em;
-    border-radius: 50%;
+  .login_form {
+    position: relative;
+    top: 15em;
+    padding: 0 8em;
+  }
+  .login_btn {
+    display: flex;
+    justify-content: center;
   }
 </style>
