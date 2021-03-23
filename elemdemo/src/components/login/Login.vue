@@ -90,4 +90,9 @@
   }
 </script>
 
-
+<style scoped>
+  .demo-ruleForm {
+    width: 800px;
+    background: pink;
+  }
+</style>
